@@ -1,0 +1,20 @@
+<h1>Ma bibliothèque</h1>
+
+@for (game of games; track game.id) {
+<div>
+    <h2>{{ game.id }}</h2>
+    <h2>{{ game.name }}</h2>
+    <p>{{ game.genre }}</p>
+    <p>{{ game.platform }}</p>
+    <p>{{ game.status }}</p>
+    <p>Sortie le {{ game.releaseDate | date :'dd/MM/yyyy'}}</p>
+    @if (game.rating) {
+    <p>{{ game.rating }}</p>
+    }
+    @if (game.coverUrl) {
+    <img src="{{ game.coverUrl }}" alt="{{ game.name }}">
+    }
+    <button (click)="removeGame(game.id)">Supprimer</button>
+
+</div>
+}
