@@ -1,0 +1,31 @@
+<div class="container" *ngIf="game; else notFound">
+    <button class="back-btn" (click)="goBack()">← Retour</button>
+
+    <div class="detail-card">
+        <div class="cover">
+            <img [src]="game.coverUrl || 'assets/placeholder.jpg'" [alt]="game.name">
+        </div>
+
+        <div class="info">
+            <h1>{{ game.name }}</h1>
+            <div class="badges">
+                <span class="badge genre">{{ game.genre }}</span>
+                <span class="badge platform">{{ game.platform }}</span>
+                <span class="badge status" [class]="game.status">{{ game.status }}</span>
+            </div>
+
+            <p class="date">Sorti le {{ game.releaseDate | date:'longDate' }}</p>
+
+            <div class="rating" *ngIf="game.rating">
+                <span class="star">★</span> {{ game.rating }}/5
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #notFound>
+    <div class="error">
+        <h2>Jeu introuvable 😢</h2>
+        <button (click)="goBack()">Retour à la bibliothèque</button>
+    </div>
+</ng-template>

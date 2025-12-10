@@ -1,0 +1,84 @@
+.form-container {
+    max-width: 500px;
+    margin: 40px auto; // Centré horizontalement
+    padding: 30px;
+    background-color: #2c3e50; // Même gris foncé que les cartes
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    color: white;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        color: #4ca1af; // Un petit bleu cyan pour le titre
+    }
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 12px;
+        background-color: #1a252f; // Fond des champs très foncé
+        border: 1px solid #34495e;
+        border-radius: 6px;
+        color: white;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:focus {
+            border-color: #4ca1af; // Bordure bleue quand on clique
+        }
+
+        // Petit trick pour l'icône calendrier en blanc (sur certains navigateurs)
+        &[type="date"] {
+            color-scheme: dark;
+        }
+    }
+}
+
+// Pour mettre deux champs côte à côte
+.row {
+    display: flex;
+    gap: 20px;
+
+    .form-group {
+        flex: 1;
+    }
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #11998e, #38ef7d); // Joli dégradé vert
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    margin-top: 10px;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+}

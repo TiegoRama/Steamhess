@@ -1,0 +1,86 @@
+.container {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: white;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    &:hover {
+        color: white;
+    }
+}
+
+.detail-card {
+    display: flex;
+    gap: 40px;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    // Sur mobile, on empile les blocs
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+}
+
+.cover {
+    flex-shrink: 0;
+    width: 300px;
+
+    img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.info {
+    h1 {
+        font-size: 3rem;
+        margin: 0 0 20px 0;
+        line-height: 1;
+    }
+
+    .badges {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border-radius: 4px;
+        background: #333;
+        font-size: 0.9rem;
+
+        &.status {
+            &.Terminé {
+                background: #27ae60;
+            }
+
+            &.En.cours {
+                background: #f39c12;
+            }
+
+            &.A.jouer {
+                background: #c0392b;
+            }
+        }
+    }
+
+    .rating {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #f1c40f;
+        margin-top: 20px;
+    }
+}
