@@ -1,11 +1,11 @@
 import { Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { GameService } from '../../services/game';
 import { Game } from '../../models/game.model';
-import { DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-library',
-  imports: [DatePipe],
+  imports: [RouterLink],
   templateUrl: './library.html',
   styleUrl: './library.scss',
 })

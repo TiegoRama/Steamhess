@@ -2,7 +2,7 @@
 
 <div class="game-grid">
     @for (game of games(); track game.id) {
-    <div class="game-card">
+    <div class="game-card" [routerLink]="['/game', game.id]">
         <div class="poster">
             @if (game.coverUrl) {
             <img [src]="game.coverUrl" [alt]="game.name">

@@ -7,5 +7,5 @@ export const routes: Routes = [
     { path: 'library', component: LibraryComponent },
     { path: 'add-game', component: AddGame },
     { path: 'game/:id', component: GameDetail },
-    { path: '', redirectTo: 'library', pathMatch: 'full' }
+    { path: '', redirectTo: '/library', pathMatch: 'full' }
 ];
